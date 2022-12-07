@@ -1,5 +1,6 @@
 import { NextPage, GetStaticProps, NextPageContext } from 'next'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 type SSGProps = {
     message: string
@@ -8,6 +9,14 @@ type SSGProps = {
 // NextPageはページコンポーネントの型
 // ジェネリックは受け取るpropsの型を指定する
 const SSG: NextPage<SSGProps> = ({ message }) => {
+
+    const router = useRouter()
+
+    // router.back()で前のページに戻る
+    const back = () => {
+        router.back()
+    }
+
     return (
         <div>
             <Head>
@@ -22,6 +31,9 @@ const SSG: NextPage<SSGProps> = ({ message }) => {
                     お前の"message"はこれだ↓ <br />
                     {message}
                 </p>
+                <div>
+                    <button onClick={back}>戻る</button>
+                </div>
             </main>
         </div>
     )

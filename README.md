@@ -11,3 +11,9 @@
 - ポートフォワーディングでlocalhostで建てたやつにもつながる
 - iPadでターミナルを使うにはgpu accelerationをoffにする必要がある
   - Firefoxブラウザではコマンドパレットを開くキーボードショートカットが使えない
+- nextが見つからない
+  - 解決法↓
+```bash
+npm install
+```
+で`node_modules`とかの依存関係(dependencies)を入れる。`.gitignore`で入ってないので。codespacesを立て直す場合はこれをする

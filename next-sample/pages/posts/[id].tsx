@@ -54,6 +54,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 // これ何？　クラスっぽい
+// interface と ParsedUrlQuery について調べる
 interface PostParams extends ParsedUrlQuery {
     id: string
 }
